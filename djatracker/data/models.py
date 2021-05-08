@@ -5,6 +5,8 @@ from django.utils import timezone
 
 
 class store (models.Model):
+    destination_point = models.CharField(max_length=150, blank=True, null=True)
+    starting_point = models.CharField(max_length=150, blank=True, null=True)
     TRAVEL_CHOICES = (
         ("Driving", "Driving"),
         ("Transit", "Transit"),
@@ -12,8 +14,6 @@ class store (models.Model):
         ("Cycling", "Cycling"),
         ("Flights", "Flights"),
     )
-    starting_point = models.CharField(max_length=150, blank=True, null=True)
-    destination_point = models.CharField(max_length=150, blank=True, null=True)
     distance = models.DecimalField(
         max_length=50, max_digits=10, decimal_places=3, blank=True, null=True)
     travel_time = models.DateField(blank=True, null=True)
