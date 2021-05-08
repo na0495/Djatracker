@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from .models import MappingData
-from .forms import StoreModelForm
+from .forms import MappingDataModelForm
 
 # Create your views here.
 
 
 def calculate_distance_view(request):
     object = get_object_or_404(MappingData, id=1)
-    form = StoreModelForm(request.POST or None)
+    form = MappingDataModelForm(request.POST or None)
 
     if form.is_valid():
         instance = form.save(commit=False)
