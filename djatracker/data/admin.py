@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import store
+from .models import MappingData
 
 # Register your models here.
 
-admin.site.register(store)
+admin.site.register(MappingData)

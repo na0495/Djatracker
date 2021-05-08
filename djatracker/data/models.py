@@ -1,12 +1,14 @@
 from django.db import models
-from django.utils import timezone
+from django.contrib.gis.db import models
 
 # Create your models here.
 
 
-class store (models.Model):
+class MappingData (models.Model):
     destination_point = models.CharField(max_length=150, blank=True, null=True)
     starting_point = models.CharField(max_length=150, blank=True, null=True)
+    destination_location_point = models.PointField()
+    starting_location_point = models.PointField()
     TRAVEL_CHOICES = (
         ("Driving", "Driving"),
         ("Transit", "Transit"),
@@ -23,4 +25,4 @@ class store (models.Model):
     travel_mode = models.CharField(max_length=30, choices=TRAVEL_CHOICES)
 
     def __str__(self):
-        return f"Travling from {self.starting_point} to {self.destination_point} with the approximity distance of {self.distance} km"
+        return '%s %s' % (self.destination_point, self.starting_point)

@@ -1,8 +1,8 @@
 from django import forms
-from .models import store
+from .models import MappingData
 
 
-class StoreModelForm(forms.ModelForm):
+class MappingDataModelForm(forms.ModelForm):
     class Meta:
-        model = store
+        model = MappingData
         fields = ('destination_point',)
