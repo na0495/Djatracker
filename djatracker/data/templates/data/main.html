@@ -2,4 +2,10 @@
 <!--Title-->
 {% block title %} Distance calculater {% endblock title %}
 <!--Content-->
-{% block content %} {{destination_point}} {% endblock content %}
+{% block content %} {{store.destination_point}} 
+<form action="" methode="POST" autocomplete="off">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="btn btn-success"> Save <button>
+</form>
+{% endblock content %}
