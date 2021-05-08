@@ -9,4 +9,4 @@ def calculate_distance_view(request):
     context = {
         'distance': object
     }
-    return render(request, 'store/main.html', context)
+    return render(request, 'data/main.html', context)
