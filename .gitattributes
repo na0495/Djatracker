@@ -1,0 +1,2 @@
+*.powershelllinguist-detectable=false
+*.python linguist-detectable=true
